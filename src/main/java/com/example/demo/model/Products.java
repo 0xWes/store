@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import java.sql.Timestamp;
@@ -14,6 +16,19 @@ public class Products  extends  Base {
     private String description;
     private String barcode;
     private Timestamp validateData;
+    private Double price;
+    private Double minPrice;
+    private Double maxPrice;
+    private Integer quantity;
+    private String unitMeasure;
+
+    @ManyToOne
+    @JoinColumn(name = "brand_uuid")
+    private Brand brand;
+
+    @ManyToOne
+    @JoinColumn(name = "category_uuid")
+    private Category category;
 
     public String getName() {
         return name;
@@ -45,5 +60,61 @@ public class Products  extends  Base {
 
     public void setValidateData(Timestamp validateData) {
         this.validateData = validateData;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(Double minPrice) {
+        this.minPrice = minPrice;
+    }
+
+    public Double getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(Double maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getUnitMeasure() {
+        return unitMeasure;
+    }
+
+    public void setUnitMeasure(String unitMeasure) {
+        this.unitMeasure = unitMeasure;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
