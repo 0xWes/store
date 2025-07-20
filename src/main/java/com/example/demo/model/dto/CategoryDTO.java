@@ -1,12 +1,12 @@
 package com.example.demo.model.dto;
 
-public class Category extends Base {
+public class CategoryDTO extends BaseDTO {
 
     private String name;
 
 
-    public Category(){}
-    public Category(String name){
+    public CategoryDTO(){}
+    public CategoryDTO(String name){
         this.name = name;
     }
     public String getName() {

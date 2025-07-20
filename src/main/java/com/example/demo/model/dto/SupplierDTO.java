@@ -1,14 +1,14 @@
 package com.example.demo.model.dto;
 
-public class Supplier extends Base {
+public class SupplierDTO extends BaseDTO {
     private String name;
     private String fantasyName;
     private String document;
     private String stateRegistration;
 
-    public Supplier(){}
+    public SupplierDTO(){}
 
-    public Supplier(String name, String fantasyName, String document, String stateRegistration) {
+    public SupplierDTO(String name, String fantasyName, String document, String stateRegistration) {
         this.name = name;
         this.fantasyName = fantasyName;
         this.document = document;

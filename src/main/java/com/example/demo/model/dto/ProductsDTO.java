@@ -4,7 +4,7 @@
 
     import java.sql.Timestamp;
 
-    public class Products  extends Base {
+    public class ProductsDTO extends BaseDTO {
 
         private String name;
         private String description;
@@ -15,12 +15,12 @@
         private Double maxPrice;
         private Integer quantity;
         private String unitMeasure;
-        private Brand brand;
-        private Category category;
+        private BrandDTO brand;
+        private CategoryDTO category;
 
-        public Products(){}
+        public ProductsDTO(){}
 
-        public Products(String name, String description, String barcode, Timestamp validateData, Double price, Double minPrice, Double maxPrice, Integer quantity, String unitMeasure, Brand brand, Category category) {
+        public ProductsDTO(String name, String description, String barcode, Timestamp validateData, Double price, Double minPrice, Double maxPrice, Integer quantity, String unitMeasure, BrandDTO brand, CategoryDTO category) {
             this.name = name;
             this.description = description;
             this.barcode = barcode;
@@ -106,19 +106,19 @@
             this.unitMeasure = unitMeasure;
         }
 
-        public Brand getBrand() {
+        public BrandDTO getBrand() {
             return brand;
         }
 
-        public void setBrand(Brand brand) {
+        public void setBrand(BrandDTO brand) {
             this.brand = brand;
         }
 
-        public Category getCategory() {
+        public CategoryDTO getCategory() {
             return category;
         }
 
-        public void setCategory(Category category) {
+        public void setCategory(CategoryDTO category) {
             this.category = category;
         }
     }

@@ -2,7 +2,7 @@ package com.example.demo.model.dto;
 
 import java.sql.Timestamp;
 
-public class Invoice extends Base {
+public class InvoiceDTO extends BaseDTO {
 
     private Integer numberInvoice;
     private String serie;
@@ -16,8 +16,8 @@ public class Invoice extends Base {
     private String status;
     private String documentSupplier;
 
-    public Invoice(){}
-    public Invoice(Integer numberInvoice, String serie, Timestamp emited, Timestamp departureDate, Double productsValue, Double totalValue, Double taxValue, String keyAccess, String type, String status, String documentSupplier) {
+    public InvoiceDTO(){}
+    public InvoiceDTO(Integer numberInvoice, String serie, Timestamp emited, Timestamp departureDate, Double productsValue, Double totalValue, Double taxValue, String keyAccess, String type, String status, String documentSupplier) {
         this.numberInvoice = numberInvoice;
         this.serie = serie;
         this.emited = emited;

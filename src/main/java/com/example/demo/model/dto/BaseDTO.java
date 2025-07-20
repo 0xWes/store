@@ -3,7 +3,7 @@ package com.example.demo.model.dto;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-abstract public class  Base {
+abstract public class BaseDTO {
 
     private UUID uuid;
     private Timestamp created;
