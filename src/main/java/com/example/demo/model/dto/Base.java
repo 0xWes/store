@@ -1,0 +1,44 @@
+package com.example.demo.model.dto;
+
+import java.sql.Timestamp;
+import java.util.UUID;
+
+abstract public class  Base {
+
+    private UUID uuid;
+    private Timestamp created;
+    private Timestamp modified;
+    private Boolean active;
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
+    }
+
+    public Timestamp getModified() {
+        return modified;
+    }
+
+    public void setModified(Timestamp modified) {
+        this.modified = modified;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+}

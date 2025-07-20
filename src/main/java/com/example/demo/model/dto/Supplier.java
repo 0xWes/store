@@ -1,16 +1,19 @@
-package com.example.demo.model;
+package com.example.demo.model.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "supplier")
-public class Supplier extends Base{
-
+public class Supplier extends Base {
     private String name;
     private String fantasyName;
     private String document;
     private String stateRegistration;
+
+    public Supplier(){}
+
+    public Supplier(String name, String fantasyName, String document, String stateRegistration) {
+        this.name = name;
+        this.fantasyName = fantasyName;
+        this.document = document;
+        this.stateRegistration = stateRegistration;
+    }
 
     public String getName() {
         return name;
