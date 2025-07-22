@@ -13,7 +13,7 @@ public class Brand extends Base {
 
     private String name;
     private String description;
-    private String image_logo;
+    private String imageLogo;
 
     @OneToMany
     @JoinColumn(name = "brand_uuid")
@@ -35,12 +35,12 @@ public class Brand extends Base {
         this.description = description;
     }
 
-    public String getImage_logo() {
-        return image_logo;
+    public String getImageLogo() {
+        return imageLogo;
     }
 
-    public void setImage_logo(String image_logo) {
-        this.image_logo = image_logo;
+    public void setImageLogo(String image_logo) {
+        this.imageLogo = image_logo;
     }
 
     public List<Products> getProducts() {

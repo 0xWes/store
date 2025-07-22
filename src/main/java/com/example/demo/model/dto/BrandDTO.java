@@ -1,5 +1,8 @@
 package com.example.demo.model.dto;
 
+import com.example.demo.model.Brand;
+import com.example.demo.model.Products;
+
 import java.util.List;
 
 public class BrandDTO extends BaseDTO {
@@ -7,14 +10,14 @@ public class BrandDTO extends BaseDTO {
     private String name;
     private String description;
     private String image_logo;
-    private List<ProductsDTO> products;
+    private List<Products> products;
 
     public BrandDTO() {}
-    public BrandDTO(String name, String description, String image_logo, List<ProductsDTO> products) {
-        this.name = name;
-        this.description = description;
-        this.image_logo = image_logo;
-        this.products = products;
+    public BrandDTO(Brand brand) {
+        this.name = brand.getName();
+        this.description = brand.getDescription();
+        this.image_logo = brand.getImageLogo();
+        this.products = brand.getProducts();
     }
 
     public String getName() {
@@ -41,11 +44,11 @@ public class BrandDTO extends BaseDTO {
         this.image_logo = image_logo;
     }
 
-    public List<ProductsDTO> getProducts() {
+    public List<Products> getProducts() {
         return products;
     }
 
-    public void setProducts(List<ProductsDTO> products) {
+    public void setProducts(List<Products> products) {
         this.products = products;
     }
 }

@@ -2,6 +2,10 @@
 
 
 
+    import com.example.demo.model.Brand;
+    import com.example.demo.model.Category;
+    import com.example.demo.model.Products;
+
     import java.sql.Timestamp;
 
     public class ProductsDTO extends BaseDTO {
@@ -15,23 +19,23 @@
         private Double maxPrice;
         private Integer quantity;
         private String unitMeasure;
-        private BrandDTO brand;
-        private CategoryDTO category;
+        private Brand brand;
+        private Category category;
 
         public ProductsDTO(){}
 
-        public ProductsDTO(String name, String description, String barcode, Timestamp validateData, Double price, Double minPrice, Double maxPrice, Integer quantity, String unitMeasure, BrandDTO brand, CategoryDTO category) {
-            this.name = name;
-            this.description = description;
-            this.barcode = barcode;
-            this.validateData = validateData;
-            this.price = price;
-            this.minPrice = minPrice;
-            this.maxPrice = maxPrice;
-            this.quantity = quantity;
-            this.unitMeasure = unitMeasure;
-            this.brand = brand;
-            this.category = category;
+        public ProductsDTO(Products products) {
+            this.name = products.getName();
+            this.description = products.getDescription();
+            this.barcode = products.getBarcode();
+            this.validateData = products.getValidateData();
+            this.price = products.getPrice();
+            this.minPrice = products.getMinPrice();
+            this.maxPrice = products.getMaxPrice();
+            this.quantity = products.getQuantity();
+            this.unitMeasure = products.getUnitMeasure();
+            this.brand = products.getBrand();
+            this.category = products.getCategory();
         }
 
         public String getName() {
@@ -106,19 +110,19 @@
             this.unitMeasure = unitMeasure;
         }
 
-        public BrandDTO getBrand() {
+        public Brand getBrand() {
             return brand;
         }
 
-        public void setBrand(BrandDTO brand) {
+        public void setBrand(Brand brand) {
             this.brand = brand;
         }
 
-        public CategoryDTO getCategory() {
+        public Category getCategory() {
             return category;
         }
 
-        public void setCategory(CategoryDTO category) {
+        public void setCategory(Category category) {
             this.category = category;
         }
     }

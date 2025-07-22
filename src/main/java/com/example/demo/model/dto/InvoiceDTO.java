@@ -1,5 +1,7 @@
 package com.example.demo.model.dto;
 
+import com.example.demo.model.Invoice;
+
 import java.sql.Timestamp;
 
 public class InvoiceDTO extends BaseDTO {
@@ -17,18 +19,18 @@ public class InvoiceDTO extends BaseDTO {
     private String documentSupplier;
 
     public InvoiceDTO(){}
-    public InvoiceDTO(Integer numberInvoice, String serie, Timestamp emited, Timestamp departureDate, Double productsValue, Double totalValue, Double taxValue, String keyAccess, String type, String status, String documentSupplier) {
-        this.numberInvoice = numberInvoice;
-        this.serie = serie;
-        this.emited = emited;
-        this.departureDate = departureDate;
-        this.productsValue = productsValue;
-        this.totalValue = totalValue;
-        this.taxValue = taxValue;
-        this.keyAccess = keyAccess;
-        this.type = type;
-        this.status = status;
-        this.documentSupplier = documentSupplier;
+    public InvoiceDTO(Invoice invoice) {
+        this.numberInvoice = invoice.getNumberInvoice();
+        this.serie = invoice.getSerie();
+        this.emited = invoice.getEmited();
+        this.departureDate = invoice.getDepartureDate();
+        this.productsValue = invoice.getProductsValue();
+        this.totalValue = invoice.getTotalValue();
+        this.taxValue = invoice.getTaxValue();
+        this.keyAccess = invoice.getKeyAccess();
+        this.type = invoice.getType();
+        this.status = invoice.getStatus();
+        this.documentSupplier = invoice.getDocumentSupplier();
     }
 
     public Integer getNumberInvoice() {
