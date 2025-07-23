@@ -10,6 +10,6 @@ public interface ISupplier {
     SupplierDTO registerSupplier(SupplierDTO supplierDTO);
     SupplierDTO getSupplier(UUID uuid);
     Page<SupplierDTO> allSuppliers(Pageable pageable);
-    SupplierDTO updateSuplier(SupplierDTO supplierDTO);
+    SupplierDTO updateSuplier(SupplierDTO supplierDTO, UUID uuid);
     void deleteSupplier(UUID uuid);
 }

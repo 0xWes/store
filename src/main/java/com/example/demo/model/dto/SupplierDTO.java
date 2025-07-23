@@ -1,5 +1,7 @@
 package com.example.demo.model.dto;
 
+import com.example.demo.model.Supplier;
+
 public class SupplierDTO extends BaseDTO {
     private String name;
     private String fantasyName;
@@ -8,11 +10,11 @@ public class SupplierDTO extends BaseDTO {
 
     public SupplierDTO(){}
 
-    public SupplierDTO(String name, String fantasyName, String document, String stateRegistration) {
-        this.name = name;
-        this.fantasyName = fantasyName;
-        this.document = document;
-        this.stateRegistration = stateRegistration;
+    public SupplierDTO(Supplier supplier) {
+        this.name = supplier.getName();
+        this.fantasyName = supplier.getFantasyName();
+        this.document = supplier.getDocument();
+        this.stateRegistration = supplier.getStateRegistration();
     }
 
     public String getName() {

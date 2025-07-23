@@ -46,4 +46,6 @@ abstract public class  Base {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    public Base() {}
 }
