@@ -34,7 +34,7 @@ public class Supplier implements ISupplier {
     }
 
     @Override
-    public SupplierDTO updateSuplier(SupplierDTO supplierDTO) {
+    public SupplierDTO updateSuplier(SupplierDTO supplierDTO, UUID uuid) {
         return null;
     }
 
