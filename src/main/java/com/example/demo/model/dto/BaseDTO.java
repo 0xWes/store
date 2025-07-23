@@ -1,15 +1,10 @@
-package com.example.demo.model;
-
-import jakarta.persistence.*;
+package com.example.demo.model.dto;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@MappedSuperclass
-abstract public class  Base {
+abstract public class BaseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
     private Timestamp created;
     private Timestamp modified;
@@ -46,6 +41,4 @@ abstract public class  Base {
     public void setActive(Boolean active) {
         this.active = active;
     }
-
-    public Base() {}
 }

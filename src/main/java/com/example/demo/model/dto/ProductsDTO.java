@@ -1,16 +1,14 @@
-    package com.example.demo.model;
+    package com.example.demo.model.dto;
 
 
-    import jakarta.persistence.Entity;
-    import jakarta.persistence.JoinColumn;
-    import jakarta.persistence.ManyToOne;
-    import jakarta.persistence.Table;
+
+    import com.example.demo.model.Brand;
+    import com.example.demo.model.Category;
+    import com.example.demo.model.Products;
 
     import java.sql.Timestamp;
 
-    @Entity
-    @Table(name = "products")
-    public class Products  extends  Base {
+    public class ProductsDTO extends BaseDTO {
 
         private String name;
         private String description;
@@ -21,14 +19,24 @@
         private Double maxPrice;
         private Integer quantity;
         private String unitMeasure;
-
-        @ManyToOne
-        @JoinColumn(name = "brand_uuid")
         private Brand brand;
-
-        @ManyToOne
-        @JoinColumn(name = "category_uuid")
         private Category category;
+
+        public ProductsDTO(){}
+
+        public ProductsDTO(Products products) {
+            this.name = products.getName();
+            this.description = products.getDescription();
+            this.barcode = products.getBarcode();
+            this.validateData = products.getValidateData();
+            this.price = products.getPrice();
+            this.minPrice = products.getMinPrice();
+            this.maxPrice = products.getMaxPrice();
+            this.quantity = products.getQuantity();
+            this.unitMeasure = products.getUnitMeasure();
+            this.brand = products.getBrand();
+            this.category = products.getCategory();
+        }
 
         public String getName() {
             return name;
