@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 
 import com.example.demo.model.dto.SupplierDTO;
+import com.example.demo.repository.SupplierRepository;
 import com.example.demo.services.ISupplier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,9 +16,11 @@ import java.util.UUID;
 public class SupplierController {
 
     private final ISupplier iSupplier;
+    private final SupplierRepository supplierRepository;
 
-    public SupplierController(ISupplier iSupplier) {
+    public SupplierController(ISupplier iSupplier, SupplierRepository supplierRepository) {
         this.iSupplier = iSupplier;
+        this.supplierRepository = supplierRepository;
     }
 
     @PostMapping("/register")
@@ -32,8 +35,15 @@ public class SupplierController {
         return ResponseEntity.ok(dto);
     }
 
-    @PutMapping("/deactivate/{uuid}")
-    public ResponseEntity<Void> deactivate(@PathVariable UUID uuid){
+//    @PutMapping("/deactivate/{uuid}")
+//    public ResponseEntity<Void> deactivate(@PathVariable UUID uuid){
+//        iSupplier.deleteSupplier(uuid);
+//        return ResponseEntity.ok().build();
+//    }
+
+    @DeleteMapping("/delete/{uuid}")
+    public ResponseEntity<Void> delete(@PathVariable UUID uuid){
+        System.out.println("UUID " + uuid);
         iSupplier.deleteSupplier(uuid);
         return ResponseEntity.ok().build();
     }

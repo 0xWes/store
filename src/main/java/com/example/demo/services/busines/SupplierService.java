@@ -66,7 +66,7 @@ public class SupplierService implements ISupplier {
         Optional<Supplier> supplierOptional = supplierRepository.findById(uuid);
         Supplier supplier = supplierOptional
                 .orElseThrow(() -> new ResourceNotFoundException("Fornecedor não encontrado"));
-        supplierRepository.deactivateSupplier(supplier.getUuid());
+        supplierRepository.deleteById(supplier.getUuid());
     }
 
     private Supplier updateFromDTO(SupplierDTO supplierDTO, Supplier supplier) {

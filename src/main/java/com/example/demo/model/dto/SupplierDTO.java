@@ -11,6 +11,10 @@ public class SupplierDTO extends BaseDTO {
     public SupplierDTO(){}
 
     public SupplierDTO(Supplier supplier) {
+        this.setUuid(supplier.getUuid());
+        this.setCreated(supplier.getCreated());
+        this.setModified(supplier.getModified());
+        this.setActive(supplier.getActive());
         this.name = supplier.getName();
         this.fantasyName = supplier.getFantasyName();
         this.document = supplier.getDocument();
