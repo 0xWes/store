@@ -2,6 +2,9 @@ package com.example.demo.model.dto;
 
 import com.example.demo.model.Supplier;
 
+import java.sql.Timestamp;
+import java.util.UUID;
+
 public class SupplierDTO extends BaseDTO {
     private String name;
     private String fantasyName;
@@ -19,6 +22,18 @@ public class SupplierDTO extends BaseDTO {
         this.fantasyName = supplier.getFantasyName();
         this.document = supplier.getDocument();
         this.stateRegistration = supplier.getStateRegistration();
+    }
+    public SupplierDTO(UUID uuid, Timestamp created, Timestamp modified,
+                       Boolean active, String name, String fantasyName,
+                       String document, String stateRegistration) {
+        this.setUuid(uuid);
+        this.setCreated(created);
+        this.setModified(modified);
+        this.setActive(active);
+        this.name = name;
+        this.fantasyName = fantasyName;
+        this.document = document;
+        this.stateRegistration = stateRegistration;
     }
 
     public String getName() {
